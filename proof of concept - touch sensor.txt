@@ -1,0 +1,27 @@
+int touch=7;
+int led=42;
+int t=1;
+void setup() {
+  pinMode(led,OUTPUT);
+  pinMode(touch,INPUT);
+}
+
+void loop() {
+  int s = digitalRead(touch);
+  if (t==1)
+  {
+   if (s == 1)
+   {
+     digitalWrite(led, HIGH);
+     t=0;
+   }
+  }
+  else if(t==0)
+  {
+   if (s == 1)
+   {
+     digitalWrite(led, LOW);
+     t=1;
+   }
+  }
+}
